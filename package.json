@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "files": [
+    "outline/",
+    "solid/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf outline solid package *.tgz",
+    "export": "figma-export use-config figma.config.js",
+    "test": "node test.js",
+    "build": "run-s clean export",
+    "np": "np",
+    "release": "run-s build np"
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +29,14 @@
     "icons",
     "svg",
     "react"
-  ]
+  ],
+  "devDependencies": {
+    "@figma-export/cli": "^4.5.0",
+    "@figma-export/output-components-as-svg": "^4.5.0",
+    "@figma-export/transform-svg-with-svgo": "^4.5.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^4.1.2"
+  }
 }
