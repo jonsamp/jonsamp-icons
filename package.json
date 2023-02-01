@@ -1,0 +1,24 @@
+{
+  "name": "jonsamp-icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/jonsamp/$github_repo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonsamp/$github_repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonsamp/$github_repo/issues"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "react"
+  ]
+}
