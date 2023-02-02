@@ -2,8 +2,23 @@ require('dotenv').config();
 
 const svgo = require('@figma-export/transform-svg-with-svgo');
 const fileId = process.env.FILE_ID;
+const capitalize = (s) => {
+  return s.split('-').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join('');
+};
 const outputters = [
   require('@figma-export/output-components-as-svg')({ output: './' }),
+  require('@figma-export/output-components-as-svgr')({
+    getFileExtension: () => '.tsx',
+    getComponentName: ({ componentName, pageName }) => {
+      if (pageName === 'outline') {
+        return capitalize(componentName);
+      }
+
+      return capitalize(componentName) + capitalize(pageName);
+    },
+    getSvgrConfig: () => ({ typescript: true }),
+    output: './src',
+  }),
 ];
 
 /** @type {import('svgo').PluginConfig[]} */

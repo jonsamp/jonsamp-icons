@@ -6,7 +6,8 @@
 # build
 /outline
 /solid
-/duotone
+/react
+/src
 
 # misc
 .DS_Store
